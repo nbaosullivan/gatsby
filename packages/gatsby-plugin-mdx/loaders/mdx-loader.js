@@ -120,11 +120,11 @@ module.exports = async function (content) {
 
   let mdxNode
   try {
-    mdxNode = await createMDXNode({
+    ;({ mdxNode } = await createMDXNode({
       id: `fakeNodeIdMDXFileABugIfYouSeeThis`,
       node: fileNode,
       content,
-    })
+    }))
   } catch (e) {
     return callback(e)
   }
